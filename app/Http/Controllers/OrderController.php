@@ -16,7 +16,7 @@ class OrderController extends Controller
    {
        $order=Order::find($id);
 
-       $order->status= 'Delivered';
+       $order->status= 'Delivered'; 
 
        $order->save();
 
