@@ -23,20 +23,13 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2>Products</h2>
-            <form action="{{url('search')}}" method="get" class="form-inline" style="float: right; padding: 10px;">
-
-              @csrf
-              <input type="submit" Value="Search" class="btn btn-success">
-              <input class="form-control" type="search" name="search" placeholder="Search">
-
-              
-            </form>
+            <h2>{{ $shops->name}}}</h2>
+           
           </div>
         </div>
 
      
-        @foreach ($data as $product)
+        @foreach ($product as $product)
             
         <div class="col-md-3">
           <div class="product-item" style="shadow; position: relative">
@@ -56,11 +49,11 @@
         
         @endforeach
 
-        @if(method_exists($data,'links'))
+        @if(method_exists($product,'links'))
 
         <div class="d-flex justify-content-center">
 
-          {!! $data->links() !!}
+          {!! $product->links() !!}
 
 
         </div>

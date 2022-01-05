@@ -57,6 +57,7 @@ Route::get('/catalog', [CatalogController::class, 'showcatalog']);
 /*---- Search Catalog ----*/
 Route::get('/search', [CatalogController::class, 'search']); 
 
-
+/*---- Shop Catalog ----*/
+Route::get('/viewshop/{id}', [ShopController::class, 'viewshop']); 
 
 
