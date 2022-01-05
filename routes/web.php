@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\UserHomeController;
 use App\Http\Controllers\AdminProductController;
@@ -61,3 +62,7 @@ Route::get('/search', [CatalogController::class, 'search']);
 Route::get('/viewshop/{id}', [ShopController::class, 'viewshop']); 
 
 
+/*---- Orders ----*/
+Route::get('/order', [OrderController::class, 'vieworder']); 
+
+Route::get('/orderstatus/{id}', [OrderController::class, 'updatestatus']); 
