@@ -24,7 +24,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="contact.html">Orders</a>
-                    </li> 
+                    </li>  
               </ul>
 
               <!-- Right Side Of Navbar -->
