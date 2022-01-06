@@ -12,9 +12,11 @@
         @foreach ($shops as $shop)
             
         <div class="col-md-3">
+        <a href="{{url('viewshop', $shop->id)}}">
         <div class="card shadow mb-4">
             <div class="card-body text-center">
-            <a href="#"><img class="img-fluid" src="/shopimage/{{$shop->shop_img}}" alt=""></a>
+            <img class="img-fluid" src="/shopimage/{{$shop->shop_img}}" alt="">
+          </a>
                 </div>
              </div>
           </div>

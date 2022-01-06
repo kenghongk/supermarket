@@ -38,7 +38,7 @@
      
         @foreach ($data as $product)
             
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="product-item" style="shadow; position: relative">
             <a href="#"><img height="60" width="50" src="/productimage/{{$product->product_img}}"></a>
             <div class="down-content">
