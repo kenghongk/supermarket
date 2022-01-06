@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('quantity')->nullable();
             $table->string('price')->nullable();
             $table->string('status')->nullable();
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 
