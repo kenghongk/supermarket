@@ -42,13 +42,16 @@
                         <td style="padding:20px;">{{$orders->status}}</td>
                         <td style="padding:20px;">
                         
+
                             <a class="btn btn-primary" href="{{url('orderstatus', $orders->id)}}">Completed</a>
+
                         </td>
                     </tr>
 
                     
                     @endforeach
                 </table>
+
                 <h1 class="title mb-4 mt-4"><strong>Completed Order</strong></h1>
                 <hr style="width: 600px">
                     <table>
@@ -79,6 +82,7 @@
                         @endforeach
                     </table>
     
+
 
 
 
