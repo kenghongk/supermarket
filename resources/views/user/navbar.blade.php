@@ -22,7 +22,11 @@
                     <li class="nav-item">
                       <a class="nav-link" href="about.html">Shop</a>
                     </li>
-                    
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Orders</a>
+                    </li>  
+
               </ul>
 
               <!-- Right Side Of Navbar -->
