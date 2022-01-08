@@ -11,12 +11,14 @@
   </nav>
 </div>
 
-
+         
 @if(session()->has('message'))
 <div class="alert alert-success" style="width: 350px">
   {{session()->get('message')}}
   <button type="button" class="close" data-dismiss="alert" align="right">x</button>
 </div>
+
+
 @endif
     
 <div class="row">
