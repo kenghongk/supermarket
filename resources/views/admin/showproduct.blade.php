@@ -1,24 +1,20 @@
-@extends('layouts.admin')
 
-@section('content-wrapper')
 
-<div class="page-header">
-  <h3 class="page-title"> Manage Products </h3>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-     <li class="breadcrumb-item"><a href="#"> Products </a></li>
-     <li class="breadcrumb-item active" aria-current="page">List Products</li>
-    </ol>
-  </nav>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <-- CSS--->
+    @include('admin.css')
 
-@if(session()->has('message'))
-<div class="alert alert-success" style="width: 350px">
-  {{session()->get('message')}}
-  <button type="button" class="close" data-dismiss="alert" align="right">x</button>
-</div>
-@endif
+  </head>
+  <body>
+      <!-- partial:partials/_sidebar.html -->
+     @include('admin.sidebar')
+      <!-- partial -->
 
+      @include('admin.navbar')
+      
+        <!-- body -->
 
         <div style="padding-bottom:30px;" class="container-fluid page-body-wrapper">
             <div class="container" align="center">
