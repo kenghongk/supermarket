@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\UserHomeController;
 use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\CartController;
 
 
 
@@ -66,3 +67,9 @@ Route::get('/viewshop/{id}', [ShopController::class, 'viewshop']);
 Route::get('/order', [OrderController::class, 'vieworder']); 
 
 Route::get('/orderstatus/{id}', [OrderController::class, 'updatestatus']); 
+
+/*---- Cart ----*/
+Route::get('/add-to-cart/{product}', [CartController::class, 'add'])->name('cart.add')->middleware('auth'); 
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index')->middleware('auth');
+Route::get('/cart/destroy/{itemId}', [CartController::class, 'destroy'])->name('cart.destroy')->middleware('auth');
+Route::get('/cart/update/{itemId}', [CartController::class, 'update'])->name('cart.update')->middleware('auth');

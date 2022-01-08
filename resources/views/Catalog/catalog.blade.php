@@ -44,12 +44,7 @@
             <div class="down-content">
               <a href="#"><h4 style="text-align: left">{{$product->product_name}}</h4></a>
               <h6>RM {{$product->price}}</h6>
-              <form action="" method="post" style="text-align: left">
-                @csrf
-                <input type="number" value="1" min="1" class="form-control" style="width:100px" name="">
-                <br>
-              <input align="left" style="background-color: #4CAF50;" class="btn btn-success" type="submit" value="Add Cart">
-              </form>
+              <a class="btn btn-success" href="{{route('cart.add',$product->id)}}">add to cart</a>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-   public function vieworder()
+    public function vieworder()
    {
        $order=Order::where('status', 'Not delivered')->get();
        $order2=Order::where('status', 'Delivered')->get();
