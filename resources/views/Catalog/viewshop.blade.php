@@ -19,11 +19,14 @@
 </header>
 <div class="shopuser header-text">
   <div class="latest-products">
-    <div class="container">
-      <div class="row">
+  
+    <div class="container p-4 select-shop">
+      <div class="row mt-4">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2>{{ $shops->name}}}</h2>
+            <h4 style="font-size: 30px;"><strong>{{ $shops->shop_name}}</strong></h4>
+            <hr>
+            <br>
            
           </div>
         </div>
@@ -41,7 +44,8 @@
                 @csrf
                 <input type="number" value="1" min="1" class="form-control" style="width:100px" name="">
                 <br>
-              <input align="left" style="background-color: #4CAF50;" class="btn btn-success" type="submit" value="Add Cart">
+
+                <a class="btn btn-success" href="{{route('cart.add',$product->id)}}">add to cart</a>
               </form>
             </div>
           </div>

@@ -22,13 +22,11 @@
                     <li class="nav-item">
                       <a class="nav-link" href="about.html">Shop</a>
                     </li>
-<<<<<<< Updated upstream
+
                     <li class="nav-item">
                       <a class="nav-link" href="contact.html">Orders</a>
                     </li> 
-=======
-                    
->>>>>>> Stashed changes
+
               </ul>
 
               <!-- Right Side Of Navbar -->
@@ -38,6 +36,7 @@
                       @if (Route::has('login'))
                       
                           @auth
+
                          
                             <li class="nav-item">
                       <a class="nav-link" href="/my-orders">My Orders</a>
@@ -46,6 +45,17 @@
                       <a class="nav-link" href="/my-orders">Add Cart</a>
                     </li> 
                     
+                            <li class="nav-item">
+                      <a class="nav-link" href="">Orders</a>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url('cart') }}">Cart
+                          <div class="badge">
+                            {{Cart::session(auth()->id())->getTotalQuantity()}}
+                          </div>
+  
+                        </a>
+                      </li>
+
                                 <x-app-layout>
             
                                 </x-app-layout>

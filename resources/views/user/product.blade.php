@@ -18,6 +18,7 @@
               <a href="#"><h4>{{$product->product_name}}</h4></a>
               <h6>{{$product->price}}</h6>
               <p>{{$product->description}}</p>
+              <a class="btn btn-success" href="{{route('cart.add',$product->id)}}">add to cart</a>
             </div>
           </div>
         </div>
