@@ -11,12 +11,14 @@
   </nav>
 </div>
 
-
+         
 @if(session()->has('message'))
 <div class="alert alert-success" style="width: 350px">
   {{session()->get('message')}}
   <button type="button" class="close" data-dismiss="alert" align="right">x</button>
 </div>
+
+
 @endif
     
 <div class="row">
@@ -54,7 +56,7 @@
             <label for="price">Price RM </label>
             <input type="number" class="form-control" name="price" placeholder="Price Product" style="background-color:grey; width: 250px;" required>
             </div>
-          
+           
             <div class="form-group">
               <label>Product Image</label>
               <input type="file" name="file" class="file-upload-default">
