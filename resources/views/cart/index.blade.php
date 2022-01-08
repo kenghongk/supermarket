@@ -67,7 +67,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <h1 class="text-right">Total Price:RM {{Cart::session(auth()->id())->getTotal()}}</h1>
+                        <h1 class="text-right">Total Price test:RM {{Cart::session(auth()->id())->getTotal()}}</h1>
 
                         <a href="#" class="btn btn-primary" role='button'>Proceed to checkout</a>
                         </div>
