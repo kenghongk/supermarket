@@ -13,11 +13,12 @@
             
         <div class="col-md-3">
           <div class="product-item">
-            <a href="#"><img height="300" width="150" src="/productimage/{{$product->product_img}}" class="img-fluid"></a>
+            <a href="#"><img height="200" width=100" src="/productimage/{{$product->product_img}}" class="img-fluid"></a>
             <div class="down-content">
               <a href="#"><h4>{{$product->product_name}}</h4></a>
               <h6>{{$product->price}}</h6>
               <p>{{$product->description}}</p>
+              <a class="btn btn-success" href="{{route('cart.add',$product->id)}}">add to cart</a>
             </div>
           </div>
         </div>
