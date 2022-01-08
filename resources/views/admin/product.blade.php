@@ -54,7 +54,7 @@
             <label for="price">Price RM </label>
             <input type="number" class="form-control" name="price" placeholder="Price Product" style="background-color:grey; width: 250px;" required>
             </div>
-          
+           
             <div class="form-group">
               <label>Product Image</label>
               <input type="file" name="file" class="file-upload-default">
