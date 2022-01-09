@@ -1,76 +1,47 @@
+@extends('layouts.admin')
+<base href="/public">
+@section('content-wrapper')
 
+<div class="page-header">
+  <h3 class="page-title"> Add Products </h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a href="#"> Forms </a></li>
+     <li class="breadcrumb-item active" aria-current="page">Add Product</li>
+    </ol>
+  </nav>
+</div>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    
-    <base href="/public">
-    @include('admin.css')
-
-    <style type="text/css">
-        .title
-        {
-          color: white; 
-          padding-top: 25px; 
-          font-size: 25px;  
-        }
-        label
-        {
-          display: inline-block;
-          width: 250px;
-    
-        }
-      
-        </style>
-    
-
-  </head>
-  <body>
-      <!-- partial:partials/_sidebar.html -->
-     @include('admin.sidebar')
-      <!-- partial -->
-
-      @include('admin.navbar')
-      
-        <!-- body -->
-      
-        <div class="container-fluid page-body-wrapper">
-          
-            <div class="container" align="center">
-            <h1 class="title mb-4"><strong>Update Product</strong></h1>
-            <hr style="width: 600px">
-    
-            @if(session()->has('message'))
-    
-            <div class="alert alert-success" style="width: 350px">
-              {{session()->get('message')}}
-    
-            <button type="button" class="close" data-dismiss="alert" align="right">x</button>
-    
-            
-    
-            </div>
-    
-            @endif
-    
-            <form action="{{url('updateproduct', $data->id)}}" method="post" enctype="multipart/form-data">
-    
+  @if(session()->has('message'))
+  <div class="alert alert-success" style="width: 350px">
+    {{session()->get('message')}}
+    <button type="button" class="close" data-dismiss="alert" align="right">x</button>
+  </div>
+  @endif
+  
+    <div class="row">
+      <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Create Shop Form</h4>
+            <p class="card-description mb-3"> Details Details </p>
+            <form class="form-sample" action="{{url('updateproduct', $data->id)}}" method="post" enctype="multipart/form-data">
               @csrf
     
-            <div style="padding:15px;">
-            <label>Product Name</label>
-            <input style="color:black; width: 250px;" type="text" name="product_name" value="{{$data->product_name}}" required >
-            </div>
+              <div class="form-group">
+                <label for="product_name">Product Name</label>
+                <input type="text" class="form-control" name="product_name" value="{{$data->product_name}}" placeholder="Product Name" style="background-color: grey" required>
+              </div>
     
-            <div style="padding:15px;">
-            <label>Description</label>
-            <input style="color:black; width: 250px; height:150px;" type="text" name="description" value="{{$data->description}}" rows="4" required>
-            </div>
+              <div class="form-group">
+                <label for="description">Product Description</label>
+                <input type="text" class="form-control" name="description" value="{{$data->description}}" placeholder="Description" style="background-color: grey" required>
+              </div>
     
-            <div style="padding:15px;">
-              <label>Category</label>
-              <select name="category" style="color:black; width: 250px;">
-                <option value="{{$data->category}}"" selected>Select</option>
+             <div class="form-group">
+              <label for="category">Product Category</label>
+              <select class="form-control" name="category" style="background-color:grey; width: 250px;" required>
+                <option value="{{$data->category}}" selected>Select</option>
                 <option value=detergent>Detergent</option>
                 <option value=meat>Meat</option>
                 <option value=seafood>Seafood</option>
@@ -79,42 +50,34 @@
               </select>
               </div>
     
-            <div style="padding:15px;">
-            <label>Price</label>
-            <input style="color:black; width: 250px;" type="number" name="price" value="{{$data->price}}" required>
-            </div>
-    
-            <div style="padding:15px;">
-            <label>Quantity</label>
-            <input style="color:black; width: 250px;" type="number" name="quantity" value="{{$data->quantity}}" required>
-            </div>
+              <div class="form-group">
+                <label for="price">Price RM </label>
+                <input type="number" class="form-control" name="price" value="{{$data->price}}" placeholder="Price Product" style="background-color:grey; width: 250px;" required>
+                </div>
 
-            <div style="padding:15px;">
-                <label>Old Image</label>
-                <img height="100" width="100" src="/productimage/{{$data->product_img}}">
-            </div>
-    
-            <div style="padding:15px;">
-            
-                <label>Change The Image</label>
-            <input type="file" name="file">
-            </div>
-            <hr style="width: 600px">
-    
-            <div style="padding:15px;">
-            <input class="btn btn-success" type="submit">
-            </div>
+                <div class="form-group">
+                  <label for="price">Quantity </label>
+                  <input type="number" class="form-control" name="quantity" value="{{$data->quantity}}" placeholder="Quantity Product" style="background-color:grey; width: 250px;" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="price">Current Image </label>
+                    <img height="300" width="300" src="/productimage/{{$data->product_img}}">
+                    </div>
+              
+                <div class="form-group">
+                  <label>Change Image</label>
+                  <input type="file" name="file" class="file-upload-default">
+                  <input type="file" name="file">
+                </div>
+                <hr style="width: 100%" class="mb-4">
+                
+                <button type="submit" class="btn btn-primary me-2">Update</button>
+                <button class="btn btn-dark">Cancel</button>
             </form>
-    
+          </div>
         </div>
+      </div>
+    </div>
+    @endsection
     
-              <!-- body -->
-           @include('admin.script')
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-
-          <!-- body -->
-       @include('admin.script')
-    <!-- End custom js for this page -->
-  </body>
-</html>
