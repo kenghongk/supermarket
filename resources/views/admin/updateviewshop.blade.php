@@ -1,95 +1,65 @@
+@extends('layouts.admin')
+<base href="/public">
+@section('content-wrapper')
+<div class="page-header">
+  <h3 class="page-title"> Update Products </h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a href="#"> Product </a></li>
+     <li class="breadcrumb-item active" aria-current="page">Update Product</li>
+    </ol>
+  </nav>
+</div>
 
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+@if(session()->has('message'))
+<div class="alert alert-success" style="width: 350px">
+  {{session()->get('message')}}
+  <button type="button" class="close" data-dismiss="alert" align="right">x</button>
+</div>
+@endif
     
-    <base href="/public">
-    @include('admin.css')
+<div class="row">
+  <div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Update Product</h4>
+        <p class="card-description mb-3"> Product Details </p>
+        <form class="form-sample" action="{{url('updateshop', $data->id)}}" method="post" enctype="multipart/form-data">
+          @csrf
 
-    <style type="text/css">
-        .title
-        {
-          color: white; 
-          padding-top: 25px; 
-          font-size: 25px;  
-        }
-        label
-        {
-          display: inline-block;
-          width: 250px;
-        }
-        </style>
-  </head>
-  <body>
-      <!-- partial:partials/_sidebar.html -->
-     @include('admin.sidebar')
-      <!-- partial -->
+          <div class="form-group">
+            <label for="product_name">Shop Name</label>
+            <input type="text" class="form-control" name="shop_name" value="{{$data->shop_name}}" style="background-color: grey" required>
+          </div>
 
-      @include('admin.navbar')
-      
-        <!-- body -->
-      
-        <div class="container-fluid page-body-wrapper">
+          <div class="form-group">
+            <label for="description">Address</label>
+            <input type="text" class="form-control" name="address" value="{{$data->address}}" style="background-color: grey" required>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Tell No</label>
+            <input type="text" class="form-control" name="tel_no" value="{{$data->tel_no}}" style="background-color: grey" required>
+          </div>
+
+          <div class="form-group">
+            <label for="price">Current Image </label>
+            <img height="300" width="300" src="/shopimage/{{$data->shop_img}}">
+            </div>
           
-            <div class="container" align="center">
-            <h1 class="title mb-4"><strong>Update Shop</strong></h1>
-            <hr style="width: 600px">
-    
-            @if(session()->has('message'))
-    
-            <div class="alert alert-success" style="width: 350px">
-              {{session()->get('message')}}
-    
-            <button type="button" class="close" data-dismiss="alert" align="right">x</button>
-    
+            <div class="form-group">
+              <label>Product Image</label>
+              <input type="file" name="file" class="file-upload-default">
+              <input type="file" name="file">
             </div>
-    
-            @endif
-    
-            <form action="{{url('updateshop', $data->id)}}" method="post" enctype="multipart/form-data">
-    
-              @csrf
-    
-            <div style="padding:15px;">
-            <label>Shop Name</label>
-            <input style="color:black; width: 250px;" type="text" name="shop_name" value="{{$data->shop_name}}" required >
-            </div>
-    
-            <div style="padding:15px;">
-            <label>Address</label>
-            <input style="color:black; width: 250px; height:150px;" type="text" name="address" value="{{$data->address}}" rows="4" required>
-            </div>
-    
-            <div style="padding:15px;">
-            <label>Tell No</label>
-            <input style="color:black; width: 250px;" type="number" name="tel_no" value="{{$data->tel_no}}" required>
-            </div>
-    
-            <div style="padding:15px;">
-                <label>Old Image</label>
-                <img height="100" width="100" src="/shopimage/{{$data->shop_img}}">
-            </div>
-    
-            <div style="padding:15px;">
+            <hr style="width: 100%" class="mb-4">
             
-                <label>Change The Image</label>
-            <input type="file" name="file">
-            </div>
-            <hr style="width: 600px">
-    
-            <div style="padding:15px;">
-            <input class="btn btn-success" type="submit">
-            </div>
-            </form>
-        </div>
-              <!-- body -->
-           @include('admin.script')
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-
-          <!-- body -->
-       @include('admin.script')
-    <!-- End custom js for this page -->
-  </body>
-</html>
+            <button type="submit" class="btn btn-primary me-2">Shop</button>
+            <button class="btn btn-dark">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
