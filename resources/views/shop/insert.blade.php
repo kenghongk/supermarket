@@ -1,93 +1,58 @@
+@extends('layouts.admin')
 
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <-- CSS--->
-    @include('admin.css')
-
-    <style type="text/css">
-    .title
-    {
-      color: white; 
-      padding-top: 25px; 
-      font-size: 25px;  
-    }
-    label
-    {
-      display: inline-block;
-      width: 250px;
-
-    }
-  
-    </style>
-
-  </head>
-  <body style="background-color: rgb(1, 4, 15)">
-   
-      <!-- partial:partials/_sidebar.html -->
-     @include('admin.sidebar')
-      <!-- partial -->
-
-      @include('admin.navbar')
-      
-        <!-- body -->
-        <div class="container-fluid page-body-wrapper">
-          
-        <div class="container" align="center">
-        <h1 class="title mb-4"><strong>Create New Shop</strong></h1>
-        <hr style="width: 600px">
+@section('content-wrapper')
+<div class="page-header">
+  <h3 class="page-title"> Create Shop </h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a href="#">Forms</a></li>
+     <li class="breadcrumb-item active" aria-current="page">Create Shop</li>
+    </ol>
+  </nav>
+</div>
 
         @if(session()->has('message'))
-
         <div class="alert alert-success" style="width: 350px">
           {{session()->get('message')}}
-
-        <button type="button" class="close" data-dismiss="alert" align="right">x</button>
-
-        
-
+          <button type="button" class="close" data-dismiss="alert" align="right">x</button>
         </div>
-
         @endif
 
-        <form action="{{url('uploadshop')}}" method="post" enctype="multipart/form-data">
-
+<div class="row">
+  <div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Create Shop Form</h4>
+        <p class="card-description mb-3"> Shop Details </p>
+        <form class="form-sample" action="{{url('uploadshop')}}" method="post" enctype="multipart/form-data">
           @csrf
 
-        <div style="padding:15px;">
-        <label>Shop Name</label>
-        <input style="color:black; width: 250px;" type="text" name="shop_name" placeholder="Product Name" required >
-        </div>
+          <div class="form-group">
+            <label for="shop_name">Shop Name</label>
+            <input type="text" class="form-control" name="shop_name" placeholder="Shop Name" style="background-color: grey" required>
+          </div>
 
-        <div style="padding:15px;">
-        <label>Address</label>
-        <input style="color:black; width: 250px; height:150px;" type="text" name="address" placeholder="Address" rows="4" required>
-        </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" name="address" placeholder="Address Shop" rows="4" style="background-color: grey" required>
+          </div>
 
+          <div class="form-group">
+            <label for="tel_no">Phone Number</label>
+            <input type="text" class="form-control" name="tel_no" placeholder="Phone Shop" style="background-color: grey" required>
+          </div>
 
-        <div style="padding:15px;">
-        <label>Phone Number</label>
-        <input style="color:black; width: 250px;" type="number" name="tel_no" placeholder="Tell Phone" required>
-        </div>
-
-        <div style="padding:15px; margin-left:80px;">
-        <label>Shop Logo</label>
-        <input type="file" name="file">
-        </div>
-        <hr style="width: 600px">
-
-        <div style="padding:15px;">
-        <input class="btn btn-success" type="submit">
-        </div>
+          <div class="form-group">
+            <label>Shop Logo</label>
+            <input type="file" name="file" class="file-upload-default">
+            <input type="file" name="file">
+          </div>
+          <hr style="width: 100%" class="mb-4">
+          <button type="submit" class="btn btn-primary me-2">Create</button>
+          <button class="btn btn-dark">Cancel</button>
         </form>
-
+      </div>
     </div>
-
-          <!-- body -->
-       @include('admin.script')
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-    <!-- End custom js for this page -->
-  </body>
-</html>
+  </div>
+</div>
+@endsection
