@@ -53,6 +53,7 @@
               </td>
             </tr>
             @endforeach             
+
        </tbody>
       </table>
                         <h1 class="text-right">Total Price:RM {{ Cart::getTotal() }}</h1>

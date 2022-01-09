@@ -19,6 +19,7 @@
 </header>
 <div class="shopuser header-text">
   <div class="latest-products">
+  
     <div class="container p-4 select-shop">
       <div class="row mt-4">
         <div class="col-md-12">
@@ -43,6 +44,7 @@
                 @csrf
                 <input type="number" value="1" min="1" class="form-control" style="width:100px" name="">
                 <br>
+
                 <a class="btn btn-success" href="{{route('cart.add',$product->id)}}">add to cart</a>
               </form>
             </div>

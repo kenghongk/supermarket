@@ -20,13 +20,33 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="phone" value="{{ __('phone') }}" />
+                <x-jet-label for="phone" value="{{ __('Phone') }}" />
                 <x-jet-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required />
             </div>
 
             <div class="mt-4 mb-4">
-                <x-jet-label for="address" value="{{ __('address') }}" />
-                <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required />
+                <x-jet-label for="address1" value="{{ __('Address 1') }}" />
+                <x-jet-input id="address1" class="block mt-1 w-full" type="text" name="address1" :value="old('address1')" required />
+            </div>
+
+            <div class="mt-4 mb-4">
+                <x-jet-label for="address2" value="{{ __('Address 2') }}" />
+                <x-jet-input id="address2" class="block mt-1 w-full" type="text" name="address2" :value="old('address2')" required />
+            </div>
+
+            <div class="mt-4 mb-4">
+                <x-jet-label for="city" value="{{ __('City') }}" />
+                <x-jet-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required />
+            </div>
+
+            <div class="mt-4 mb-4">
+                <x-jet-label for="state" value="{{ __('State') }}" />
+                <x-jet-input id="state" class="block mt-1 w-full" type="text" name="state" :value="old('state')" required />
+            </div>
+
+            <div class="mt-4 mb-4">
+                <x-jet-label for="country" value="{{ __('Country') }}" />
+                <x-jet-input id="country" class="block mt-1 w-full" type="text" name="country" :value="old('country')" required />
             </div>
 
             <label for="type_user" class="mt-3">

@@ -25,7 +25,7 @@
 
                     <li class="nav-item">
                       <a class="nav-link" href="contact.html">Orders</a>
-                    </li>  
+                    </li> 
 
               </ul>
 
@@ -36,16 +36,26 @@
                       @if (Route::has('login'))
                       
                           @auth
+
+                         
+                            <li class="nav-item">
+                      <a class="nav-link" href="/my-orders">My Orders</a>
+                    </li> 
+                    <li class="nav-item">
+                      <a class="nav-link" href="/my-orders">Add Cart</a>
+                    </li> 
+                    
                             <li class="nav-item">
                       <a class="nav-link" href="">Orders</a>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ url('cart') }}">Cart
-                          <div class="badge">
-                            {{Cart::session(auth()->id())->getTotalQuantity()}}
-                          </div>
-  
-                        </a>
-                      </li>
+                      <a class="nav-link" href="{{ route('cart.list') }}">Cart
+                        <div class="badge">
+                          {{ Cart::getTotalQuantity()}}
+                        </div>
+
+                      </a>
+                    </li> 
+
                                 <x-app-layout>
             
                                 </x-app-layout>
