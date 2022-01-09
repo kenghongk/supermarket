@@ -33,7 +33,7 @@
           <div class="banner-item-01">
             <div class="text-content">
               <h4>Best Offer</h4>
-              <h2>Fresh Goods On Sale</h2>
+              <h2>New Arrivals On Sale</h2>
             </div>
           </div>
           <div class="banner-item-02">

@@ -30,19 +30,19 @@
         <form class="form-sample" action="{{url('uploadproduct')}}" method="post" enctype="multipart/form-data">
           @csrf
 
-          <div class="form-group">
-            <label for="product_name">Product Name</label>
-            <input type="text" class="form-control" name="product_name" placeholder="Product Name" style="background-color: grey" required>
-          </div>
+        <div style="padding:15px;">
+        <label>Product Name</label>
+        <input style="color:black; width: 250px;" type="text" name="product_name" placeholder="Product Name" required >
+        </div>
 
-          <div class="form-group">
-            <label for="description">Product Description</label>
-            <input type="text" class="form-control" name="description" placeholder="Description" style="background-color: grey" required>
-          </div>
+        <div style="padding:15px;">
+        <label>Description</label>
+        <input style="color:black; width: 250px; height:150px;" type="text" name="description" placeholder="Product Description" rows="4" required>
+        </div>
 
-         <div class="form-group">
-          <label for="category">Product Category</label>
-          <select class="form-control" name="category" style="background-color:grey; width: 250px;" required>
+        <div style="padding:15px;">
+          <label>Category</label>
+          <select name="category" style="color:black; width: 250px;">
             <option value="" selected>Select</option>
             <option value=detergent>Detergent</option>
             <option value=meat>Meat</option>
@@ -51,7 +51,6 @@
             <option value=drink>Drink</option>
           </select>
           </div>
-
           <div class="form-group">
             <label for="price">Price RM </label>
             <input type="number" class="form-control" name="price" placeholder="Price Product" style="background-color:grey; width: 250px;" required>
@@ -67,8 +66,13 @@
             <button type="submit" class="btn btn-primary me-2">Create</button>
             <button class="btn btn-dark">Cancel</button>
         </form>
-      </div>
+
     </div>
-  </div> 
-</div>
-@endsection
+
+          <!-- body -->
+       @include('admin.script')
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+    <!-- End custom js for this page -->
+  </body>
+</html>

@@ -8,7 +8,6 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\UserHomeController;
 use App\Http\Controllers\AdminProductController;
-
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
@@ -70,7 +69,6 @@ Route::get('/viewshop/{id}', [ShopController::class, 'viewshop']);
 /*---- Orders ----*/
 Route::get('/order', [OrderController::class, 'vieworder']); 
 
-
 Route::get('/orderstatus/{id}', [OrderController::class, 'updatestatus']); 
 
 /*---- Customer Orders ----*/
@@ -79,6 +77,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/my-orders', [UserController::class, 'index']);
     Route::get('/delete/{id}', [UserController::class, 'delete']);
  
+
 });
 /*---- Orders ----*/
 Route::get('/order', [OrderController::class, 'vieworder']); 
