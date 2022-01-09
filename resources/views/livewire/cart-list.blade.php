@@ -52,7 +52,8 @@
                   <a href="#" class="btn btn-danger" wire:click.prevent="removeCart('{{$item['id']}}')">x</a>    
               </td>
             </tr>
-            @endforeach            
+            @endforeach             
+
        </tbody>
       </table>
                         <h1 class="text-right">Total Price:RM {{ Cart::getTotal() }}</h1>
