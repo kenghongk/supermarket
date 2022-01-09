@@ -40,6 +40,17 @@
                       <a class="nav-link" href="/my-orders">Add Cart</a>
                     </li> 
                     
+
+                            <li class="nav-item">
+                      <a class="nav-link" href="">Orders</a>
+                      <li class="nav-item">
+                      <a class="nav-link" href="{{ route('cart.list') }}">Cart
+                        <div class="badge">
+                          {{ Cart::getTotalQuantity()}}
+                        </div>
+
+                      </a>
+                    </li> 
                                 <x-app-layout>
             
                                 </x-app-layout>
