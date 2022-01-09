@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2>Products</h2>
+            <h2>Productstest</h2>
             <form action="{{url('search')}}" method="get" class="form-inline" style="float: right; padding: 10px;">
 
               @csrf
