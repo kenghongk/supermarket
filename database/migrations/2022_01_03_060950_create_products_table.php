@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('category')->nullable();
             $table->string('price')->nullable();
             $table->string('quantity')->nullable();
+            $table->string('shop_id')->nullable();
             $table->string('product_img')->nullable();
             $table->timestamps();
         });

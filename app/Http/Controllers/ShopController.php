@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Shop;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -81,5 +82,17 @@ class ShopController extends Controller
        $data->save();
 
        return redirect()->back()->with('message','Shop Updated Successfully');
+    }
+    public function viewshop($id)
+    {
+        if(Shop::where('id', $id)->exists())
+        {
+            $shops = Shop::where('id', $id)->first();
+            $product = Product::where('shop_id', $shops->id)->get();
+            return view('Catalog.viewshop', compact('shops', 'product'));
+        }
+        else{
+            return redirect('/')->with('message','Shop not exists');
+        }
     }
 }

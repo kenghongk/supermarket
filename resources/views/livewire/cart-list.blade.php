@@ -1,3 +1,4 @@
+
 <div>
     @if ($message = Session::get('success'))
         <div class="p-4 mb-3 bg-green-400 rounded">
@@ -27,6 +28,7 @@
               @foreach ($cartItems as $item)
             <tr>
               <td class=" pb-4 md:table-cell">
+
                 <a href="#">
                   <img src="{{ $item['attributes']['image'] }}" class="w-20 rounded" alt="Thumbnail">
                 </a>
@@ -39,11 +41,13 @@
               <td><p class="mb-2 md:ml-4"></p> </td>
               <td class="justify-center mt-6 md:justify-end md:flex">
                 <div class="h-10 w-28">
+
                   <div class="relative flex flex-row w-full h-8">
                     <livewire:cart-update :item="$item" :key="$item['id']"/>
                   </div>
                 </div>
               </td>
+
               <td class="hidden text-right md:table-cell">
                 <span class="text-sm font-medium lg:text-base">
                     ${{ $item['price'] }}
@@ -65,6 +69,6 @@
             wire:click.prevent="clearAllCart">Remove All Cart</a>
             <a href="#" class="btn btn-success">Checkout</a>
         </div>
-
       </div>
 </div>
+

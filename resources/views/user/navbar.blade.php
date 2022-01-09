@@ -12,8 +12,8 @@
               <!-- Left Side Of Navbar -->
               <ul class="navbar-nav me-auto">
                   <!-- Home -->
-                  <li class="nav-item active">
-                      <a class="nav-link" href="#">Home</a>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{url('redirect')}}">Home</a>
                       <span class="sr-only"></span>
                   </li>
                   <li class="nav-item">
@@ -22,9 +22,7 @@
                     <li class="nav-item">
                       <a class="nav-link" href="about.html">Shop</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="contact.html">Orders</a>
-                    </li> 
+                    
               </ul>
 
               <!-- Right Side Of Navbar -->
@@ -34,7 +32,25 @@
                       @if (Route::has('login'))
                       
                           @auth
-                            
+                         
+                            <li class="nav-item">
+                      <a class="nav-link" href="/my-orders">My Orders</a>
+                    </li> 
+                    <li class="nav-item">
+                      <a class="nav-link" href="/my-orders">Add Cart</a>
+                    </li> 
+                    
+
+                            <li class="nav-item">
+                      <a class="nav-link" href="">Orders</a>
+                      <li class="nav-item">
+                      <a class="nav-link" href="{{ route('cart.list') }}">Cart
+                        <div class="badge">
+                          {{ Cart::getTotalQuantity()}}
+                        </div>
+
+                      </a>
+                    </li> 
                                 <x-app-layout>
             
                                 </x-app-layout>
