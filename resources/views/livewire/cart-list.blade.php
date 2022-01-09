@@ -20,7 +20,7 @@
                 <span class="lg:hidden" title="Quantity">Qtd</span>
                 <span class="hidden lg:inline">Quantity</span>
               </th>
-              <th class="hidden text-center md:table-cell"> price</th>
+              <th class=" text-center md:table-cell"> price</th>
               <th class="hidden text-center md:table-cell"> Remove </th>
             </tr>
           </thead>
@@ -48,12 +48,12 @@
                 </div>
               </td>
 
-              <td class="hidden text-right md:table-cell">
+              <td class=" text-center md:table-cell">
                 <span class="text-sm font-medium lg:text-base">
-                    ${{ $item['price'] }}
+                    RM{{ $item['price'] }}/unit
                 </span>
               </td>
-              <td class=" text-right md:table-cell">
+              <td class=" text-center md:table-cell">
                   <a href="#" class="btn btn-danger" wire:click.prevent="removeCart('{{$item['id']}}')">x</a>    
               </td>
             </tr>
