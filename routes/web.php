@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductController;
 
 
 
@@ -85,8 +86,9 @@ Route::get('/order', [OrderController::class, 'vieworder']);
 Route::get('/orderstatus/{id}', [OrderController::class, 'updatestatus']); 
 
 /*---- Cart ----*/
-Route::get('/add-to-cart/{product}', [CartController::class, 'add'])->name('cart.add')->middleware('auth'); 
-Route::get('/cart', [CartController::class, 'index'])->name('cart.index')->middleware('auth');
-Route::get('/cart/destroy/{itemId}', [CartController::class, 'destroy'])->name('cart.destroy')->middleware('auth');
-Route::get('/cart/update/{itemId}', [CartController::class, 'update'])->name('cart.update')->middleware('auth');
+
+
+Route::get('/show', [ProductController::class, 'productList'])->name('products.list');
+Route::get('cart1', [ProductController::class, 'cartList'])->name('cart.list');
+Route::post('cart2', [ProductController::class, 'addToCart'])->name('cart.store');
 
