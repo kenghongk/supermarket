@@ -62,6 +62,7 @@ Route::get('/catalog', [CatalogController::class, 'showcatalog']);
 /*---- Search Catalog ----*/
 Route::get('/search', [CatalogController::class, 'search']); 
 
+<<<<<<< Updated upstream
 /*---- Shop Catalog ----*/
 Route::get('/viewshop/{id}', [ShopController::class, 'viewshop']); 
 
@@ -90,4 +91,9 @@ Route::get('/orderstatus/{id}', [OrderController::class, 'updatestatus']);
 Route::get('/show', [ProductController::class, 'productList'])->name('products.list');
 Route::get('cart1', [ProductController::class, 'cartList'])->name('cart.list');
 Route::post('cart2', [ProductController::class, 'addToCart'])->name('cart.store');
+=======
+/*---- cart ----*/
+Route::get('cart', [ProductController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [ProductController::class, 'addToCart'])->name('cart.store');
+>>>>>>> Stashed changes
 
