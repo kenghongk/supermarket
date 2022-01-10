@@ -49,6 +49,7 @@
                         <input type="hidden" value="{{ $product->id }}" name="id">
                         <input type="hidden" value="{{ $product->product_name }}" name="product_name">
                         <input type="hidden" value="{{ $product->shop_id }}" name="shop_id">
+                         <input type="hidden" value="{{ $product->description }}" name="description">
                         <input type="hidden" value="{{ $product->price }}" name="price">
                         <input type="hidden" value="{{ $product->product_img }}"  name="product_img">
                         <input type="hidden" value="1" name="quantity">

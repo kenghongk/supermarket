@@ -28,7 +28,8 @@ class ProductController extends Controller
             'quantity' => $request->quantity,
             'attributes' => array(
                 'image' => $request->product_img,
-                'vendor' => $request->shop_id,
+                'shop_id' => $request->shop_id,
+                'description' => $request->description,
 
 
             )
