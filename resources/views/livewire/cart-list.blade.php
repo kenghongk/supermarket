@@ -1,5 +1,5 @@
 
-<div>
+<div style="font-family: monaco">
     @if ($message = Session::get('success'))
         <div class="p-4 mb-3 bg-green-400 rounded">
                 <p class="text-green-800">{{ $message }}</p>
@@ -7,62 +7,65 @@
     @endif
     <h3 class="text-3xl text-bold">
         
-       Total {{ Cart::getTotalQuantity()}} Cart 
+       {{ Cart::getTotalQuantity()}} Item In Your Cart 
     </h3>
+    <br>
+    <hr>
     <div class="flex-1">
-        <table class="w-full text-sm lg:text-base" cellspacing="0">
+       <table class="w-full text-sm lg:text-base"  cellspacing="0" >
           <thead>
-            <tr class="h-12 uppercase">
-              <th class=" md:table-cell"></th>
-              <th class="text-center">Name</th>
-              <th class="text-center">Vendor</th>
-              <th class="pl-5 text-center lg:text-right lg:pl-0">
+            <tr  class=" uppercase text-left" style="font-size: 20px">
+              <th ></th>
+              <th >Product</th>
+              <th>
                 <span class="lg:hidden" title="Quantity">Qtd</span>
-                <span class="hidden lg:inline">Quantity</span>
+                <span class=" lg:inline">Quantity</span>
               </th>
-              <th class=" text-center md:table-cell"> price</th>
-              <th class="hidden text-center md:table-cell"> Remove </th>
+              <th class="text-center">Total</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
               @foreach ($cartItems as $item)
             <tr>
-              <td class=" pb-4 md:table-cell">
-
-                <a href="#">
-                  <img src="{{ $item['attributes']['image'] }}" class="w-20 rounded" alt="Thumbnail">
-                </a>
+              <td >
+                  <a href="#" class="btn btn-danger" wire:click.prevent="removeCart('{{$item['id']}}')">x</a>    
               </td>
-              <td>
-                <a href="#">
-                  <p class="text-center mb-2 md:ml-4">{{ $item['name'] }}</p> 
+              <td >
+                <div class="row">
+                <div class="col-4 ">
+                  <a href="#">
+                  <img src="/productimage/{{$item['attributes']['image'] }}" class="w-40 rounded" alt="Thumbnail">
                 </a>
+                </div>
+                <div class="col-8 text-left ">
+                <p class="uppercase text-bold" style="font-size: 15px">{{ $item['name'] }}</p> 
+                <p >RM {{ $item['price'] }}/unit</p> 
+                <p >From shop : {{$item['attributes']['shop_id'] }}</p>
+                </div>
               </td>
-              <td><p class="mb-2 md:ml-4"></p> </td>
-              <td class="justify-center mt-6 md:justify-end md:flex">
-                <div class="h-10 w-28">
-
+              
+              <td >
+                <div >
                   <div class="relative flex flex-row w-full h-8">
                     <livewire:cart-update :item="$item" :key="$item['id']"/>
                   </div>
                 </div>
               </td>
 
-              <td class=" text-center md:table-cell">
-                <span class="text-sm font-medium lg:text-base">
-                    RM{{ $item['price'] }}/unit
+              <td class="text-center" style="font-size: 20px">
+                <span >
+                    RM {{Cart::get($item['id'])->getPriceSum()}}
                 </span>
               </td>
-              <td class=" text-center md:table-cell">
-                  <a href="#" class="btn btn-danger" wire:click.prevent="removeCart('{{$item['id']}}')">x</a>    
-              </td>
+              
             </tr>
             @endforeach
              
           </tbody>
         </table>
-        <div>
-         Total: ${{ Cart::getTotal() }}
+        <hr>
+        <div class="text-3xl text-bold">
+         Grand Total: RM{{ Cart::getTotal() }}
         </div>
         <div class="mt-5">
             <a href="#" class="btn btn-danger"

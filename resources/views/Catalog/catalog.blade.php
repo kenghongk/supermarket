@@ -62,7 +62,6 @@
               </div>
           </div>
         </div>
-
         @endforeach
   </div>
         @if(method_exists($data,'links'))
