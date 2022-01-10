@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     public function productList()
     {
-        $data = Product::all();
+        $products = Product::all();
 
-        return view('Catalog.catalog', compact('data'));
+        return view('products', compact('products'));
     }
 
     public function cartList()
@@ -27,10 +27,10 @@ class ProductController extends Controller
             'price' => $request->price,
             'quantity' => $request->quantity,
             'attributes' => array(
-            	 'shop_id' => $request->shop_id,
                 'image' => $request->product_img,
-               
-                
+                'vendor' => $request->shop_id,
+
+
             )
         ]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
