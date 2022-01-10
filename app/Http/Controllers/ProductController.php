@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shop;
 use App\Models\Product;
+use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -37,4 +39,12 @@ class ProductController extends Controller
 
         return redirect()->route('cart.list');
     }
-}
+    public function productdetails($id)
+    {
+            $product= Product::find($id);
+
+            return view('user.productdetails', compact('product'));
+
+
+        }
+    }

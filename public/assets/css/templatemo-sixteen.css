@@ -456,8 +456,16 @@ header .navbar {
 .product-item img {
 	width: 100%;
 	overflow: hidden;
+	height:  auto;
 	object-fit: cover;
 }
+.content-wrapper {
+	background: #000000;
+	padding: 1.875rem 1.75rem;
+	width: 100%;
+	-webkit-flex-grow: 1;
+	flex-grow: 1; }
+  
 
 .product-item .down-content h4 {
 	font-size: 30px;
@@ -638,8 +646,11 @@ footer .inner-content p a {
 /* Product Page */
 
 .products {
-	margin-top: 100px;
+	margin-top: 10px;
+	padding-left: 80px;
+	padding-right: 80px;
 }
+
 
 .products .filters {
 	text-align: center;

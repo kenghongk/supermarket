@@ -1,3 +1,6 @@
+@extends('layouts.customer')
+
+@section('content-wrapper')
 <div class="latest-products">
 <div class="container select-shop">
     <div class="row">
@@ -22,5 +25,5 @@
           </div>
         @endforeach
 </div>
-    </div>
 </div>
+@endsection

@@ -20,21 +20,20 @@
 @endif
 
 
-<div class="col-lg-12 grid-margin stretch-card">
+<div class="col-lg-12 grid-margin stretch-card" style="width:fit-content;">
   <div class="card">
     <div class="card-body">
       <h4 class="card-title">List Product</h4>
       <p class="card-description">List of products in the shop</code>
       </p>
       <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-bordered text-center" style="width:fit-content;">
           <thead>
             <tr>
               <th> Shop Name </th>
               <th> Address </th>
               <th> Tell No </th>
               <th> Logo Image </th>
-              <th> Quantity </th>
               <th> Update </th>
               <th> Delete </th>
             </tr>
@@ -45,7 +44,7 @@
               <td>{{$shop->shop_name}}</td>
               <td>{{$shop->address}}</td>
               <td>{{$shop->tel_no}}</td>
-              <td><img height="100" width="100" src="/shopimage/{{$shop->shop_img}}"></td>
+              <td><img src="/shopimage/{{$shop->shop_img}}"></td>
               <td><a class="btn btn-primary" href="{{url('updateviewshop', $shop->id)}}">Update</a></td>
               <td><a class="btn btn-danger" href="{{url('deleteshop',$shop->id)}}">Delete</a></td>
             </tr>

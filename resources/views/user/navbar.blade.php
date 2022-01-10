@@ -1,4 +1,4 @@
-<div>
+<header class="">
   <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm navbar-fixed-top navbar-inverse">
       <div class="container">
           <a class="navbar-brand" href="#">
@@ -18,11 +18,7 @@
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="{{url('catalog')}}">Catalog</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="about.html">Shop</a>
-                    </li>
-                    
+                    </li>     
               </ul>
 
               <!-- Right Side Of Navbar -->
@@ -69,4 +65,4 @@
           </div>
       </div>
   </nav>
-</div>
+</header>
