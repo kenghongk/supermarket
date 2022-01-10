@@ -34,7 +34,7 @@
 
           <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" class="form-control" name="address" placeholder="Address Shop" rows="4" style="background-color: grey" required>
+            <textarea type="text" class="form-control" rows="4" cols="50" name="address" placeholder="Address Shop" rows="4" style="background-color: grey; height: 10em;" required></textarea>
           </div>
 
           <div class="form-group">

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Orderitem;
+use App\Models\Order;
 
+use App\Models\Orderitem;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller

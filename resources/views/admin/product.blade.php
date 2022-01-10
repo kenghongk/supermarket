@@ -20,7 +20,7 @@
 @endif
     
 <div class="row">
-  <div class="col-12 grid-margin stretch-card">
+  <div class="col-12 grid-margin stretch-card" style="width: 900px;">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Create Shop Form</h4>
@@ -35,7 +35,7 @@
 
           <div class="form-group">
             <label for="description">Product Description</label>
-            <input type="text" class="form-control" name="description" placeholder="Description" style="background-color: grey" required>
+            <textarea class="form-control" rows="4" cols="50" name="description" placeholder="Description" style="background-color: grey; height: 10em;" required></textarea>
           </div>
 
          <div class="form-group">

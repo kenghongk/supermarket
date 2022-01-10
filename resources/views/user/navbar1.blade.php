@@ -1,4 +1,4 @@
-<div>
+<header class="">
     <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -10,22 +10,6 @@
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto">
-                    <!-- Home -->
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                        <span class="sr-only"></span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.html">Our Products</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                      </li> 
-                </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -53,4 +37,4 @@
             </div>
         </div>
     </nav>
-</div>
+</header>

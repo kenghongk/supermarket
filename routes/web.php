@@ -67,6 +67,11 @@ Route::get('/search', [CatalogController::class, 'search']);
 /*---- Shop Catalog ----*/
 Route::get('/viewshop/{id}', [ShopController::class, 'viewshop']); 
 
+/*---- Product Details ----*/
+Route::get('/productdetails/{id}', [ProductController::class, 'productdetails']); 
+
+/*---- Shop Details ----*/
+Route::get('/shopdetails/{id}', [ShopController::class, 'shopdetails']); 
 
 /*---- Orders ----*/
 Route::get('/order', [OrderController::class, 'vieworder']); 
