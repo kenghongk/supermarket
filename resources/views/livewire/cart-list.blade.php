@@ -7,7 +7,7 @@
     @endif
     <h3 class="text-3xl text-bold">
         
-       {{ Cart::getTotalQuantity()}} Item In Your Cart 
+       {{ Cart::getTotalQuantity()}} Item In Your Shopping Cart 
     </h3>
     <br>
     <hr>
