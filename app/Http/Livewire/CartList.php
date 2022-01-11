@@ -22,6 +22,8 @@ class CartList extends Component
   
           session()->flash('success', 'All Item Cart Clear Successfully !');
       }
+
+      
   
       public function render()
       {
