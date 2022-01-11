@@ -1,17 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CatalogController;
-use App\Http\Controllers\UserHomeController;
-use App\Http\Controllers\AdminProductController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\UserHomeController;
+use App\Http\Controllers\AdminShopController;
+use App\Http\Controllers\AdminProductController;
 
 
 
@@ -30,17 +31,17 @@ Route::get('/', [HomeController::class, 'index']);
 
 
 /*---- Shop ----*/
-Route::get('/shop', [ShopController::class, 'shop']); 
+Route::get('/shop', [AdminShopController::class, 'shop']); 
 
-Route::post('/uploadshop', [ShopController::class, 'uploadshop']); 
+Route::post('/uploadshop', [AdminShopController::class, 'uploadshop']); 
 
-Route::get('/showshop', [ShopController::class, 'showshop']); 
+Route::get('/showshop', [AdminShopController::class, 'showshop']); 
 
-Route::get('/deleteshop/{id}', [ShopController::class, 'deleteshop']);
+Route::get('/deleteshop/{id}', [AdminShopController::class, 'deleteshop']);
 
-Route::get('/updateviewshop/{id}', [ShopController::class, 'updateviewshop']);
+Route::get('/updateviewshop/{id}', [AdminShopController::class, 'updateviewshop']);
 
-Route::post('/updateshop/{id}', [ShopController::class, 'updateshop']); 
+Route::post('/updateshop/{id}', [AdminShopController::class, 'updateshop']); 
 
 
 /*---- Product ----*/
@@ -66,6 +67,11 @@ Route::get('/search', [CatalogController::class, 'search']);
 /*---- Shop Catalog ----*/
 Route::get('/viewshop/{id}', [ShopController::class, 'viewshop']); 
 
+/*---- Product Details ----*/
+Route::get('/productdetails/{id}', [ProductController::class, 'productdetails']); 
+
+/*---- Shop Details ----*/
+Route::get('/shopdetails/{id}', [ShopController::class, 'shopdetails']); 
 
 /*---- Orders ----*/
 Route::get('/order', [OrderController::class, 'vieworder']); 

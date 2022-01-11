@@ -1,78 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <-- CSS--->
-    @include('admin.css')
+@extends('layouts.admin')
 
-  </head>
-  <body>
-      <!-- partial:partials/_sidebar.html -->
-     @include('admin.sidebar')
-      <!-- partial -->
+@section('content-wrapper')
 
-      @include('admin.navbar')
-      
-        <!-- body -->
+<div class="page-header">
+  <h3 class="page-title"> Manage Shop </h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+     <li class="breadcrumb-item"><a href="#"> Shop </a></li>
+     <li class="breadcrumb-item active" aria-current="page">List Shop</li>
+    </ol>
+  </nav>
+</div>
 
-        <div style="padding-bottom:30px;" class="container-fluid page-body-wrapper">
-            <div class="container" align="center">
-
-                @if(session()->has('message'))
-
-                <div class="alert alert-success" style="width: 350px">
-                  {{session()->get('message')}}
-        
-                <button type="button" class="close" data-dismiss="alert" align="right">x</button>
-        
-                
-        
-                </div>
-        
-                @endif
-
-                <h1 class="title mb-4"><strong>Update Shop</strong></h1>
-                <hr style="width: 600px">
-
-                <table>
-                    <tr style="background-color: grey;">
-                        <td style="padding:20px;">Shop Name</td>
-                        <td style="padding:20px;">Address</td>
-                        <td style="padding:20px;">Tell No</td>
-                        <td style="padding:20px;">Logo Image</td>
-                        <td style="padding:20px;">Update</td>
-                        <td style="padding:20px;">Delete</td>
-                    </tr>
-
-                    @foreach ($data as $shop)
-                        
-                    
-
-                    <tr align="center" style="background-color: black;">
-                        <td>{{$shop->shop_name}}</td>
-                        <td>{{$shop->address}}</td>
-                        <td>{{$shop->tel_no}}</td>
-                        <td><img height="100" width="100" src="/shopimage/{{$shop->shop_img}}"></td>
-
-                        <td>
-                            <a class="btn btn-primary" href="{{url('updateviewshop', $shop->id)}}">Update</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-danger" href="{{url('deleteshop',$shop->id)}}">Delete</a>
-                        </td>
-                    </tr>
-
-                    
-                    @endforeach
-                </table>
-
-            </div>
-        </div>
+@if(session()->has('message'))
+<div class="alert alert-success" style="width: 350px">
+  {{session()->get('message')}}
+  <button type="button" class="close" data-dismiss="alert" align="right">x</button>
+</div>
+@endif
 
 
-          <!-- body -->
-       @include('admin.script')
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-    <!-- End custom js for this page -->
-  </body>
-</html>
+<div class="col-lg-12 grid-margin stretch-card" style="width:fit-content;">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">List Product</h4>
+      <p class="card-description">List of products in the shop</code>
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered text-center" style="width:fit-content;">
+          <thead>
+            <tr>
+              <th> Shop Name </th>
+              <th> Address </th>
+              <th> Tell No </th>
+              <th> Logo Image </th>
+              <th> Update </th>
+              <th> Delete </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              @foreach ($data as $shop)
+              <td>{{$shop->shop_name}}</td>
+              <td>{{$shop->address}}</td>
+              <td>{{$shop->tel_no}}</td>
+              <td><img src="/shopimage/{{$shop->shop_img}}"></td>
+              <td><a class="btn btn-primary" href="{{url('updateviewshop', $shop->id)}}">Update</a></td>
+              <td><a class="btn btn-danger" href="{{url('deleteshop',$shop->id)}}">Delete</a></td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection

@@ -8904,6 +8904,8 @@ progress {
   border-color: #373b3e; }
 
 .table-responsive {
+  table-layout: fixed;
+  word-wrap:break-word;  
   overflow-x: auto;
   -webkit-overflow-scrolling: touch; }
 

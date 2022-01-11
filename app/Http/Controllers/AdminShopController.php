@@ -6,7 +6,7 @@ use App\Models\Shop;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class AdminShopController extends Controller
 {
     public function shop()
     {
