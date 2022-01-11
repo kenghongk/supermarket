@@ -32,6 +32,7 @@ class ProductController extends Controller
                 'image' => $request->product_img,
                 'shop_id' => $request->shop_id,
                 'description' => $request->description,
+                'product_quantity' => $request->product_quantity,
 
 
             )
@@ -40,6 +41,7 @@ class ProductController extends Controller
 
         return redirect()->route('cart.list');
     }
+
     public function productdetails($id)
     {
             $product= Product::find($id);
@@ -49,3 +51,4 @@ class ProductController extends Controller
 
         }
     }
+
