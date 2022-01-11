@@ -1,3 +1,6 @@
+@php
+$instock = 1
+@endphp
 
 <div style="font-family: monaco">
     @if ($message = Session::get('success'))
@@ -26,6 +29,7 @@
           </thead>
           <tbody >
               @foreach ($cartItems as $item)
+
             <tr>
               <td >
                   <a href="#" class="btn btn-danger" wire:click.prevent="removeCart('{{$item['id']}}')">x</a>    
@@ -50,6 +54,19 @@
                     <livewire:cart-update :item="$item" :key="$item['id']"/>
                   </div>
                 </div>
+
+                <div class="row">
+                   <p class="text-center">Only {{$item['attributes']['product_quantity'] }} unit available</p> 
+                </div>
+                @if ($item['quantity']>$item['attributes']['product_quantity'])
+                
+                @php
+                $instock = 0
+                @endphp
+                <script>alert("Sorry our stock is not enough, Please decrease your quantity before Checkout ")</script>
+                
+                @endif
+
               </td>
 
               <td class="text-center" style="font-size: 20px">
@@ -57,10 +74,8 @@
                     RM {{Cart::get($item['id'])->getPriceSum()}}
                 </span>
               </td>
-              
             </tr>
             @endforeach
-             
           </tbody>
         </table>
         <hr>
@@ -70,7 +85,11 @@
         <div class="mt-5">
             <a href="#" class="btn btn-danger"
             wire:click.prevent="clearAllCart">Remove All Cart</a>
-            <a href="#" class="btn btn-success">Checkout</a>
+            @if($instock==0)
+            <a  href="#" class="disabled btn btn-success">Please Reduce Your Quantity</a>
+            @else
+            <a  href="#" class="btn btn-success">Checkout</a>
+            @endif
         </div>
       </div>
 </div>
