@@ -22,7 +22,7 @@ $instock = 1
               <th >Product</th>
               <th>
                 <span class="lg:hidden" title="Quantity">Qtd</span>
-                <span class="text-center lg:inline">Quantity</span>
+                <span class=" lg:inline">Quantity</span>
               </th>
               <th class="text-center">Total</th>
             </tr>
@@ -43,18 +43,18 @@ $instock = 1
                 </div>
                 <div class="col-8 text-left ">
                 <p class="uppercase text-bold" style="font-size: 15px">{{ $item['name'] }}</p> 
-                 <p >{{$item['attributes']['description'] }}</p> 
                 <p >RM {{ $item['price'] }}/unit</p> 
                 <p >From shop : {{$item['attributes']['shop_id'] }}</p>
                 </div>
               </td>
               
               <td >
-                <div class="row">
-                  <div class="flex" >
+                <div >
+                  <div class="relative flex flex-row w-full h-8">
                     <livewire:cart-update :item="$item" :key="$item['id']"/>
                   </div>
                 </div>
+
                 <div class="row">
                    <p class="text-center">Only {{$item['attributes']['product_quantity'] }} unit available</p> 
                 </div>
@@ -66,6 +66,7 @@ $instock = 1
                 <script>alert("Sorry our stock is not enough, Please decrease your quantity before Checkout ")</script>
                 
                 @endif
+
               </td>
 
               <td class="text-center" style="font-size: 20px">

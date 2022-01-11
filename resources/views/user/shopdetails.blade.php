@@ -1,4 +1,4 @@
-@extends('layouts.customer')
+@extends('layouts.subsystem')
 <base href="/public">
 @section('content')
     <div class="best-features about-features">
