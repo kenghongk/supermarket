@@ -91,12 +91,7 @@ Route::get('/order', [OrderController::class, 'vieworder']);
 
 Route::get('/orderstatus/{id}', [OrderController::class, 'updatestatus']); 
 
-/*---- Cart ----*/
 
-
-Route::get('/show', [ProductController::class, 'productList'])->name('products.list');
-Route::get('cart1', [ProductController::class, 'cartList'])->name('cart.list');
-Route::post('cart2', [ProductController::class, 'addToCart'])->name('cart.store');
 
 /*---- cart ----*/
 Route::get('cart', [ProductController::class, 'cartList'])->name('cart.list');
