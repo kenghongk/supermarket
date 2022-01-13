@@ -23,8 +23,8 @@
   <div class="col-12 grid-margin stretch-card" style="width: 700px;">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Update Product</h4>
-        <p class="card-description mb-3"> Product Details </p>
+        <h4 class="card-title">Shop Product</h4>
+        <p class="card-description mb-3"> Shop Details </p>
         <form class="form-sample" action="{{url('updateshop', $data->id)}}" method="post" enctype="multipart/form-data">
           @csrf
 
@@ -50,7 +50,7 @@
 
           <div class="form-group">
             <label for="state">State</label>
-            <input type="text" class="form-control" name="state" value="{{$data->stage}}" style="background-color: grey; width: 300px;" required>
+            <input type="text" class="form-control" name="state" value="{{$data->state}}" style="background-color: grey; width: 300px;" required>
           </div>
 
           <div class="form-group">

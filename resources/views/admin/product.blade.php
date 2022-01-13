@@ -23,8 +23,8 @@
   <div class="col-12 grid-margin stretch-card" style="width: 900px;">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Create Shop Form</h4>
-        <p class="card-description mb-3"> Details Details </p>
+        <h4 class="card-title">Add Product Form</h4>
+        <p class="card-description mb-3"> Product Details </p>
         <form class="form-sample" action="{{url('uploadproduct')}}" method="post" enctype="multipart/form-data">
           @csrf
 
