@@ -9,7 +9,7 @@
     </li>
     <!-- Dashboard -->
     <li class="nav-item menu-items">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" href="{{route('dashboard.index')}}">
         <span class="menu-icon">
           <i class="mdi mdi-chart-bar"></i>
         </span>

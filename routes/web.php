@@ -13,6 +13,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\UserHomeController;
 use App\Http\Controllers\AdminShopController;
 use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\AdminDashboardController;
 
 
 
@@ -29,6 +30,8 @@ Route::get('/redirect', [HomeController::class, 'redirect']);
 /*---- Login & Logout----*/
 Route::get('/', [HomeController::class, 'index']); 
 
+/*---- Dashboard ----*/
+Route::get('/dashboardnew', [AdminDashboardController::class, 'index'])->name('dashboard.index'); 
 
 /*---- Shop ----*/
 Route::get('/shop', [AdminShopController::class, 'shop']); 
