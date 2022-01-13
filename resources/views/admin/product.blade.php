@@ -54,6 +54,11 @@
             <label for="price">Price RM </label>
             <input type="number" class="form-control" name="price" placeholder="Price Product" style="background-color:grey; width: 250px;" required>
             </div>
+
+            <div class="form-group">
+              <label for="quantity">Quantity </label>
+              <input type="number" class="form-control" name="quantity" placeholder="Quantity Product" style="background-color:grey; width: 250px;" required>
+              </div>
           
             <div class="form-group">
               <label>Product Image</label>

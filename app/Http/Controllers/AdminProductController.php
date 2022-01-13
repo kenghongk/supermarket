@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shop;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminProductController extends Controller
 {
@@ -33,6 +35,8 @@ class AdminProductController extends Controller
         $data->quantity=$request->quantity;
 
         $data->category=$request->category;
+
+       
 
         $data->save();
 

@@ -11,7 +11,7 @@
     <li class="nav-item menu-items">
       <a class="nav-link" href="index.html">
         <span class="menu-icon">
-          <i class="mdi mdi-speedometer"></i>
+          <i class="mdi mdi-chart-bar"></i>
         </span>
         <span class="menu-title">Dashboard</span>
       </a>
@@ -21,7 +21,7 @@
     <li class="nav-item menu-items">
       <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <span class="menu-icon">
-          <i class="mdi mdi-laptop"></i>
+          <i class="mdi mdi-city"></i>
         </span>
         <span class="menu-title">Shop</span>
         <i class="menu-arrow"></i>
@@ -38,9 +38,9 @@
     <li class="nav-item menu-items">
       <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
         <span class="menu-icon">
-          <i class="mdi mdi-security"></i>
+          <i class="mdi mdi-archive"></i>
         </span>
-        <span class="menu-title">User Pages</span>
+        <span class="menu-title">Product</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="auth">
@@ -55,7 +55,7 @@
     <li class="nav-item menu-items">
       <a class="nav-link" href="{{url('order')}}">
         <span class="menu-icon">
-          <i class="mdi mdi-file-document-box"></i>
+          <i class="mdi mdi-cart"></i>
         </span>
         <span class="menu-title">Orders</span>
       </a>

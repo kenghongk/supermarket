@@ -19,7 +19,7 @@
         @endif
 
 <div class="row">
-  <div class="col-12 grid-margin stretch-card">
+  <div class="col-12 grid-margin stretch-card" style="width: 700px;">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Create Shop Form</h4>
@@ -33,13 +33,35 @@
           </div>
 
           <div class="form-group">
-            <label for="address">Address</label>
-            <textarea type="text" class="form-control" rows="4" cols="50" name="address" placeholder="Address Shop" rows="4" style="background-color: grey; height: 10em;" required></textarea>
+            <label for="address">Address 1</label>
+            <input type="text" class="form-control" name="address1" placeholder="Address Shop" style="background-color: grey;" required></textarea>
           </div>
 
           <div class="form-group">
+            <label for="address">Address 2</label>
+            <input type="text" class="form-control" name="address2" placeholder="Address Shop" style="background-color: grey;" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">City</label>
+            <input type="text" class="form-control" name="city" placeholder="City" style="background-color: grey; width: 300px;" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">State</label>
+            <input type="text" class="form-control" name="state" placeholder="State" style="background-color: grey; width: 300px;" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Postcode</label>
+            <input type="text" class="form-control" name="postcode" placeholder="Postcode" style="background-color: grey; width: 300px;" required>
+          </div>
+
+
+
+          <div class="form-group mb-8">
             <label for="tel_no">Phone Number</label>
-            <input type="text" class="form-control" name="tel_no" placeholder="Phone Shop" style="background-color: grey" required>
+            <input type="text" class="form-control" name="tel_no" placeholder="Phone Shop" style="background-color: grey; width: 300px;" required>
           </div>
 
           <div class="form-group">
@@ -47,6 +69,7 @@
             <input type="file" name="file" class="file-upload-default">
             <input type="file" name="file">
           </div>
+
           <hr style="width: 100%" class="mb-4">
           <button type="submit" class="btn btn-primary me-2">Create</button>
           <button class="btn btn-dark">Cancel</button>
