@@ -8,6 +8,7 @@ use Chartisan\PHP\Chartisan;
 use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use Carbon\Carbon;
 
 class SalebydayChart extends BaseChart
 {

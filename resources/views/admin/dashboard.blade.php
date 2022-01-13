@@ -75,25 +75,6 @@
         });
         
     </script>
-    <!-- Chart's container -->
-     <h4 class="card-title">Graph Sales by Product</h4>
-    <div id="chart2" style="height: 300px;"></div>
-    <!-- Charting library -->
-    <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
-    <!-- Chartisan -->
-    <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
-    <!-- Your application script -->
-    <script>
-        const chart = new Chartisan({
-            el: '#chart',
-            url: "@chart('salebyproductchart')",
-            hooks: new ChartisanHooks()
-             .colors(['#4299E1','#FE0045','#C07EF1','#67C560','#ECC94B'])
-                .datasets('bar')
-                .axis(true)
-        });
-       
-    </script>
 </div> 
           
 @endsection
