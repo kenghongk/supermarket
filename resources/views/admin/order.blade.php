@@ -31,6 +31,7 @@
           <thead>
             <tr>
               <th> Customer Name </th>
+              <th> Shop </th>
               <th> Tell No </th>
               <th> Address </th>
               <th> Product Name </th>
@@ -44,6 +45,7 @@
             <tr>
               @foreach ($order as $orders)
               <td>{{$orders->name}}</td>
+              <td>{{$orders->shop_id}}</td>
               <td>{{$orders->phone}}</td>
               <td>{{$orders->address}}</td>
               <td>{{$orders->product_name}}</td>
