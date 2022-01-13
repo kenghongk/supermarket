@@ -4,8 +4,10 @@ namespace App\Http\Livewire;
 
 use App\Models\Order;
 use Livewire\Component;
+use App\Models\Cart;
 use Darryldecode\Cart\Cart;
 use GuzzleHttp\Psr7\Request;
+
 
 class CartList extends Component
 {

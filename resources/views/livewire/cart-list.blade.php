@@ -43,7 +43,7 @@ $instock = 1
                 </div>
                 <div class="col-8 text-left ">
                 <p class="uppercase text-bold" style="font-size: 15px">{{ $item['name'] }}</p> 
-                 <p >{{$item['attributes']['description'] }}</p> 
+                <p >{{$item['attributes']['description'] }}</p> 
                 <p >RM {{ $item['price'] }}/unit</p> 
                 <p >From shop : {{$item['attributes']['shop_id'] }}</p>
                 </div>
