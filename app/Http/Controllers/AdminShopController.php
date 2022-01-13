@@ -27,9 +27,18 @@ class AdminShopController extends Controller
 
         $shop->shop_name=$request->shop_name;
 
-        $shop->address=$request->address;
+        $shop->address1=$request->address1;
+
+        $shop->address2=$request->address2;
+
+        $shop->city=$request->city;
+
+        $shop->state=$request->state;
+
+        $shop->postcode=$request->postcode;
 
         $shop->tel_no=$request->tel_no;
+
 
         $shop->save();
 
@@ -76,10 +85,18 @@ class AdminShopController extends Controller
        }
        $data->shop_name=$request->shop_name;
 
-       $data->address=$request->address;
+       $data->address1=$request->address1;
+
+       $data->address2=$request->address2;
+
+       $data->city=$request->city;
+
+       $data->state=$request->state;
+
+       $data->postcode=$request->postcode;
 
        $data->tel_no=$request->tel_no;
-
+       
        $data->save();
 
        return redirect()->back()->with('message','Shop Updated Successfully');

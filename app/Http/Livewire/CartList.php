@@ -2,8 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Order;
 use Livewire\Component;
 use App\Models\Cart;
+use Darryldecode\Cart\Cart;
+use GuzzleHttp\Psr7\Request;
+
 
 class CartList extends Component
 {
@@ -31,6 +35,13 @@ class CartList extends Component
           $this->cartItems = \Cart::getContent()->toArray();
   
           return view('livewire.cart-list');
+      }
+      public function placeorder(Request $request)
+      {
+        $order = new Order();
+        $order->tracking_no = 'sharma'.rand(1111,9999);
+        $order->save();
+        $order->id;
       }
 
 }

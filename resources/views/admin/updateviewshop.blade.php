@@ -20,7 +20,7 @@
 @endif
     
 <div class="row">
-  <div class="col-12 grid-margin stretch-card">
+  <div class="col-12 grid-margin stretch-card" style="width: 700px;">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Update Product</h4>
@@ -34,13 +34,33 @@
           </div>
 
           <div class="form-group">
-            <label for="description">Address</label>
-            <input type="text" class="form-control" name="address" value="{{$data->address}}" style="background-color: grey" required>
+            <label for="address1">Address 1</label>
+            <input type="text" class="form-control" name="address1" value="{{$data->address1}}" style="background-color: grey" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address2">Address 2</label>
+            <input type="text" class="form-control" name="address2" value="{{$data->address2}}" style="background-color: grey;" required>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" value="{{$data->city}}" style="background-color: grey; width: 300px;" required>
+          </div>
+
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" name="state" value="{{$data->stage}}" style="background-color: grey; width: 300px;" required>
+          </div>
+
+          <div class="form-group">
+            <label for="postcode">Postcode</label>
+            <input type="text" class="form-control" name="postcode" value="{{$data->postcode}}" style="background-color: grey; width: 300px;" required>
           </div>
 
           <div class="form-group">
             <label for="description">Tell No</label>
-            <input type="text" class="form-control" name="tel_no" value="{{$data->tel_no}}" style="background-color: grey" required>
+            <input type="text" class="form-control" name="tel_no" value="{{$data->tel_no}}" style="background-color: grey; width: 300px;" required>
           </div>
 
           <div class="form-group">
