@@ -42,7 +42,7 @@
             <tr>
               @foreach ($data as $shop)
               <td>{{$shop->shop_name}}</td>
-              <td>{{$shop->address}}</td>
+              <td>{{$shop->address1}}, {{$shop->address2}}, {{$shop->city}}, {{$shop->state}}, {{$shop->postcode}}</td>
               <td>{{$shop->tel_no}}</td>
               <td><img src="/shopimage/{{$shop->shop_img}}"></td>
               <td><a class="btn btn-primary" href="{{url('updateviewshop', $shop->id)}}">Update</a></td>

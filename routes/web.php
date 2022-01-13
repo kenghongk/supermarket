@@ -101,3 +101,7 @@ Route::get('cart', [ProductController::class, 'cartList'])->name('cart.list');
 Route::post('cart', [ProductController::class, 'addToCart'])->name('cart.store');
 
 
+/*---- checkout ----*/
+
+
+z

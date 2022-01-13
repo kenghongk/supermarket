@@ -32,13 +32,7 @@
                             <li class="nav-item">
                       <a class="nav-link" href="/my-orders">My Orders</a>
                     </li> 
-                    <li class="nav-item">
-                      <a class="nav-link" href="/my-orders">Add Cart</a>
-                    </li> 
-                    
-
-                            <li class="nav-item">
-                      <a class="nav-link" href="">Orders</a>
+        
                       <li class="nav-item">
                       <a class="nav-link" href="{{ route('cart.list') }}">Cart
                         <div class="badge">

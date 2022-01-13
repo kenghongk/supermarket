@@ -3,11 +3,11 @@
 @section('content-wrapper')
 
 <div class="page-header">
-  <h3 class="page-title"> Add Products </h3>
+  <h3 class="page-title"> Update Products </h3>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
      <li class="breadcrumb-item"><a href="#"> Forms </a></li>
-     <li class="breadcrumb-item active" aria-current="page">Add Product</li>
+     <li class="breadcrumb-item active" aria-current="page">Update Product</li>
     </ol>
   </nav>
 </div>
@@ -23,8 +23,8 @@
       <div class="col-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Create Shop Form</h4>
-            <p class="card-description mb-3"> Details Details </p>
+            <h4 class="card-title">Update Product Form</h4>
+            <p class="card-description mb-3"> Product Details </p>
             <form class="form-sample" action="{{url('updateproduct', $data->id)}}" method="post" enctype="multipart/form-data">
               @csrf
     
@@ -35,7 +35,7 @@
     
               <div class="form-group">
                 <label for="description">Product Description</label>
-                <input type="text" class="form-control" name="description" value="{{$data->description}}" placeholder="Description" style="background-color: grey" required>
+                <textarea class="form-control" rows="4" cols="50" name="description" value="{{$data->description}}" placeholder="Description" style="background-color: grey; height: 10em;" required></textarea>
               </div>
     
              <div class="form-group">
