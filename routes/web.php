@@ -99,6 +99,3 @@ Route::post('cart', [ProductController::class, 'addToCart'])->name('cart.store')
 
 
 /*---- checkout ----*/
-
-
-z
